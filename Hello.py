@@ -1,1 +1,18 @@
-print('hello python')
+"""
+1、创建 Python Web 应用
+2、在你的项目根目录下创建一个 requirements.txt，我们使用 requirements.txt 来安装 Flask 及其他依赖项
+3、
+
+"""
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello Python! this is a flask web project."
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
+
