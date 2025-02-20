@@ -1,0 +1,10 @@
+version: '3.8'
+services: # services 定义了两个服务
+  web: # web：基于 Dockerfile 构建 Flask 应用，并暴露端口 5000。
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on: # depends_on 让 web 服务在 redis 启动后再运行。 
+      - redis
+  redis: # redis：使用官方 redis:alpine 轻量级镜像。
+    image: "redis:alpine"
